@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = '1.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/strex_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/strex/strex_{{ version }}.tar.gz
-  sha256: af8740c03cdaf90223564ea000e6ea47503c0faa911109629e6d6538224b7217
+  sha256: d674dfea50cce24d89d02d3c6446e9af27041df896639e2b259ca6c4b586833e
 
 build:
   merge_build_host: True  # [win]
@@ -21,37 +21,45 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
-    - {{posix}}make
     - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
+    - {{posix}}autoconf
+    - {{posix}}automake          # [not win]
+    - {{posix}}automake-wrapper  # [win]
+    - {{posix}}pkg-config
+    - {{posix}}make
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
   host:
     - r-base
     - r-rcpp >=1.0.1
-    - r-checkmate >=1.9.1
+    - r-checkmate >=1.9.3
     - r-glue >=1.3.0
     - r-magrittr >=1.5
     - r-matrixstats >=0.50.0
     - r-ore >=1.4.0
+    - r-processx >=3.3.0
     - r-rlang >=0.3.3
-    - r-stringi
+    - r-stringi >=1.3.1
     - r-stringr
     - r-tibble >=2.0.1
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp >=1.0.1
-    - r-checkmate >=1.9.1
+    - r-checkmate >=1.9.3
     - r-glue >=1.3.0
     - r-magrittr >=1.5
     - r-matrixstats >=0.50.0
     - r-ore >=1.4.0
+    - r-processx >=3.3.0
     - r-rlang >=0.3.3
-    - r-stringi
+    - r-stringi >=1.3.1
     - r-stringr
     - r-tibble >=2.0.1
 
@@ -78,7 +86,7 @@ extra:
 
 # Package: strex
 # Title: Extra String Manipulation Functions
-# Version: 1.0.0
+# Version: 1.1.0
 # Authors@R: person("Rory", "Nolan", email = "rorynoolan@gmail.com",  role = c("aut", "cre"),  comment = c(ORCID = "0000-0002-5239-4043"))
 # Description: There are some things that I wish were easier with the 'stringr'  or 'stringi' packages. The foremost of these is the extraction of numbers  from strings. 'stringr' and 'stringi' make you figure out the regular  expression for yourself; 'strex' takes care of this for you. There are many  other handy functionalities in 'strex'. Contributions to this package are  encouraged: it is intended as a miscellany of string manipulation functions  that cannot be found in 'stringi' or 'stringr'.
 # Depends: R (>= 3.1), stringr
@@ -86,17 +94,18 @@ extra:
 # Encoding: UTF-8
 # LazyData: true
 # LinkingTo: Rcpp (>= 1.0.1)
-# Imports: Rcpp (>= 1.0.1), magrittr (>= 1.5), checkmate (>= 1.9.1), matrixStats (>= 0.50.0), ore (>= 1.4.0), rlang (>= 0.3.3), tibble (>= 2.0.1), glue (>= 1.3.0), stringi
+# Imports: Rcpp (>= 1.0.1), magrittr (>= 1.5), checkmate (>= 1.9.3), matrixStats (>= 0.50.0), ore (>= 1.4.0), rlang (>= 0.3.3), tibble (>= 2.0.1), glue (>= 1.3.0), stringi (>= 1.3.1), processx (>= 3.3.0), stats
 # RoxygenNote: 6.1.1
-# Suggests: testthat (>= 2.1.0), knitr, rmarkdown, pacman, covr, spelling
+# Suggests: testthat (>= 2.1.0), knitr, rmarkdown, pacman, covr, spelling, purrr
 # SystemRequirements: C++11
 # VignetteBuilder: knitr
-# URL: https://rorynolan.github.io/strex/
+# URL: https://rorynolan.github.io/strex, https://github.com/rorynolan/strex
 # BugReports: https://github.com/rorynolan/strex/issues
 # Language: en-US
+# Biarch: TRUE
 # NeedsCompilation: yes
-# Packaged: 2019-05-04 11:06:22 UTC; rnolan
+# Packaged: 2019-06-15 11:10:03 UTC; rnolan
 # Author: Rory Nolan [aut, cre] (<https://orcid.org/0000-0002-5239-4043>)
 # Maintainer: Rory Nolan <rorynoolan@gmail.com>
 # Repository: CRAN
-# Date/Publication: 2019-05-04 14:30:03 UTC
+# Date/Publication: 2019-06-15 11:30:03 UTC
