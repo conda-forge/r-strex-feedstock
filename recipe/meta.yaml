@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/strex_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/strex/strex_{{ version }}.tar.gz
-  sha256: af8740c03cdaf90223564ea000e6ea47503c0faa911109629e6d6538224b7217
+  sha256: d674dfea50cce24d89d02d3c6446e9af27041df896639e2b259ca6c4b586833e
 
 build:
   merge_build_host: True  # [win]
