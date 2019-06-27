@@ -1,7 +1,7 @@
 About r-strex
 =============
 
-Home: https://rorynolan.github.io/strex/
+Home: https://rorynolan.github.io/strex, https://github.com/rorynolan/strex
 
 Package license: GPL-3
 
