@@ -3,7 +3,7 @@ About r-strex
 
 Home: https://rorynolan.github.io/strex, https://github.com/rorynolan/strex
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD-3-Clause
 
