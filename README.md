@@ -1,13 +1,17 @@
 About r-strex
 =============
 
-Home: https://rorynolan.github.io/strex, https://github.com/rorynolan/strex
+Home: https://rorynolan.github.io/strex
 
 Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-strex-feedstock/blob/main/LICENSE.txt)
 
 Summary: There are some things that I wish were easier with the 'stringr' or 'stringi' packages. The foremost of these is the extraction of numbers from strings. 'stringr' and 'stringi' make you figure out the regular expression for yourself; 'strex' takes care of this for you. There are many other handy functionalities in 'strex'. Contributions to this package are encouraged: it is intended as a miscellany of string manipulation functions that cannot be found in 'stringi' or 'stringr'.
+
+Development: https://github.com/rorynolan/strex
+
+Documentation: https://rorynolan.github.io/strex/reference/index.html
 
 Current build status
 ====================
