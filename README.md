@@ -3,6 +3,7 @@ About r-strex-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-strex-feedstock/blob/main/LICENSE.txt)
 
+
 About r-strex
 -------------
 
@@ -15,6 +16,7 @@ Summary: There are some things that I wish were easier with the 'stringr' or 'st
 Development: https://github.com/rorynolan/strex
 
 Documentation: https://rorynolan.github.io/strex/reference/index.html
+
 About r-strex
 -------------
 
